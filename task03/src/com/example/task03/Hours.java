@@ -1,33 +1,33 @@
 package com.example.task03;
 
 /**
- * Интервал в миллисекундах
+ * Интервал в часах
  */
-public class Milliseconds implements TimeUnit {
+public class Hours implements TimeUnit {
 
     private final long amount;
 
-    public Milliseconds(long amount) {
+    public Hours(long amount) {
         this.amount = amount;
     }
 
     @Override
     public long toMillis() {
-        return amount;
+        return amount * 3600000;
     }
 
     @Override
     public long toSeconds() {
-        return Math.round(amount / 1000f);
+        return amount * 3600;
     }
 
     @Override
     public long toMinutes() {
-        return Math.round(amount / (1000 * 60f));
+        return amount * 60;
     }
 
     @Override
     public long toHours() {
-        return Math.round(amount / (1000 * 3600f));
+        return amount;
     }
 }
